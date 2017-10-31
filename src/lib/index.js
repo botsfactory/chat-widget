@@ -8,7 +8,6 @@ import Widget from './components/Widget';
 import Window from './components/Window';
 import MessageModel from './model/MessageModel';
 
-
 export {
   Bubble,
   Chat,

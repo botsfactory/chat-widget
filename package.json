@@ -1,5 +1,5 @@
 {
-  "name": "create-react-library",
+  "name": "@botsfactory/chat-widget",
   "version": "1.0.0",
   "description": "React NPM library starter kit based on Facebook's create react app",
   "main": "build/index.js",

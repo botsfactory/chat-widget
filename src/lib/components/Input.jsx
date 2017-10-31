@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
 
 import 'font-awesome/css/font-awesome.css'
 
@@ -84,5 +85,5 @@ export default class Input extends Component {
 }
 
 Input.propTypes = {
-  onMessageEnter: React.PropTypes.func.isRequired
+  onMessageEnter: PropTypes.func.isRequired
 }

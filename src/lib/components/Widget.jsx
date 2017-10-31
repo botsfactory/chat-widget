@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Chat from './Chat'
 import Window from './Window'
 import Trigger from './Trigger'
+import PropTypes from 'prop-types';
 
 export default class Widget extends Component {
 
@@ -38,5 +39,5 @@ export default class Widget extends Component {
 }
 
 Widget.propTypes = {
-  onMessageEnter: React.PropTypes.func.isRequired
+  onMessageEnter: PropTypes.func.isRequired
 }

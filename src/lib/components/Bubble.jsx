@@ -48,5 +48,5 @@ export default class Bubble extends React.Component {
 
 Bubble.propTypes = {
     who: PropTypes.oneOf(['me', 'other']).isRequired,
-    sent: React.PropTypes.bool.isRequired,
+    sent: PropTypes.bool.isRequired,
 }

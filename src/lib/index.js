@@ -6,6 +6,8 @@ import Input from './components/Input';
 import Trigger from './components/Trigger';
 import Widget from './components/Widget';
 import Window from './components/Window';
+import MessageModel from './model/MessageModel';
+
 
 export {
   Bubble,
@@ -15,5 +17,6 @@ export {
   Input,
   Trigger,
   Widget,
-  Window
+  Window,
+  MessageModel
 }

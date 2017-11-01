@@ -22,7 +22,7 @@ export default class Trigger extends Component {
     return (
       <Container {...this.props}>
         <span className={`fa-stack fa-2x`} >
-          <Circle className="fa fa-circle fa-stack-2x" />
+          <Circle className="widget-circle fa fa-circle fa-stack-2x" />
           <i className="fa fa-commenting-o fa-stack-1x fa-inverse" />
         </span>
       </Container>

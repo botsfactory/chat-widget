@@ -23,7 +23,7 @@ const Text = styled.div`
     opacity: ${props => props.sent ? 1 : .7};
     
     ${props => props.who == 'me' && `
-        background: #FF1547;
+        background: #0084ff;
         color: #fff;
     `}
 

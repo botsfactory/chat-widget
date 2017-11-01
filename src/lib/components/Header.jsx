@@ -60,8 +60,8 @@ export default class Header extends Component {
         return (
             <Container {...this.props}>
                 <Avatar>
-                    <AvatarCircle>
-                        <img src={logo} style={{ maxHeight: '80%' }} />
+                    <AvatarCircle className="avatar-circle">
+                        <img src={this.props.logo} style={{ maxHeight: '80%' }} />
                     </AvatarCircle>
                 </Avatar>
                 <Description>

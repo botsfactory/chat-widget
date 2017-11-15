@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import QuickReplyButton from './QuickReplyButton'
 
@@ -57,8 +56,4 @@ export default class QuickReplies extends Component {
             </div>
         )
     }
-}
-
-QuickReplies.propTypes = {
-    //buttons: PropTypes.array.isRequired
 }

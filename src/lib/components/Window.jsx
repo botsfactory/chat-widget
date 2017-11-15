@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Chat from './Chat'
 
 const Container = styled.div`
   position: fixed;

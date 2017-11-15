@@ -40,10 +40,14 @@ export default class Conversation extends Component {
         <ScrollWrapper innerRef={c => this.scrollWrapperNode = c}>
           {this.props.messages.map(message => {
 
+            let messageArr = [];
+
             if (message.text) {
-              return <Bubble key={message.id} who={message.from === this.props.user.id ? "me" : "other"} sent={message.sent} >
-                {message.text}
-              </Bubble>
+              messageArr.push(
+                <Bubble key={message.id} who={message.from === this.props.user.id ? "me" : "other"} sent={message.sent} >
+                  {message.text}
+                </Bubble>
+              );
             }
 
             if (message.attachments && message.attachments.length > 0) {
@@ -53,7 +57,7 @@ export default class Conversation extends Component {
                 switch (attachment.contentType) {
 
                   case 'application/vnd.microsoft.card.hero':
-                    return <QuickReplies key={message.id} message={attachment.content} onQuickReplyClick={this.props.onQuickReplyClick} />
+                    messageArr.push(<QuickReplies key={message.id} message={attachment.content} onQuickReplyClick={this.props.onQuickReplyClick} />);
                     break;
 
                   default:
@@ -61,6 +65,8 @@ export default class Conversation extends Component {
                 }
               }
             }
+
+            return messageArr;
           })}
         </ScrollWrapper>
       </Container>

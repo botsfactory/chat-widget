@@ -33,8 +33,8 @@ class App extends Component {
     this.directLine.activity$
       .filter(activity => activity.type === 'message')
       .subscribe(message => {
-        console.log(message);
-        if (message.from.id != this.state.user.id) {
+
+        if (message.from.id !== this.state.user.id) {
           const model = new MessageModel({ from: message.from.id, id: message.id, text: message.text, attachments: message.attachments, sent: true })
           // const model = new MessageModel({ from: '1', id: cuid(), sent: true, text: 'Hello!' }),
           this.setState({ messages: this.state.messages.concat([model]) });
@@ -55,7 +55,7 @@ class App extends Component {
       .subscribe(
       id => {
 
-        const index = self.state.messages.findIndex(m => m.id == message.id);
+        const index = self.state.messages.findIndex(m => m.id === message.id);
         const messages = update(self.state.messages, { [index]: { id: { $set: id }, sent: { $set: true } } });
 
         self.setState({ messages });

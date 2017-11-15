@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import logo from '../img/avatar.png'
 
 const Container = styled.div`
   display: flex;
@@ -61,7 +59,7 @@ export default class Header extends Component {
             <Container {...this.props}>
                 <Avatar>
                     <AvatarCircle className="avatar-circle">
-                        <img src={this.props.logo} style={{ maxHeight: '80%' }} />
+                        <img src={this.props.logo} alt= 'Chatbot Avatar' style={{ maxHeight: '80%' }} />
                     </AvatarCircle>
                 </Avatar>
                 <Description>

@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { MessageModel } from '../model/MessageModel';
 
 const Img = styled.div`
   background-size: contain;
@@ -28,10 +27,6 @@ const Text = styled.div`
 `
 
 export default class QuickReplyButton extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   onClickQuickReplyButton = (e) => {
     this.props.onQuickReplyClick({ value: this.props.title });

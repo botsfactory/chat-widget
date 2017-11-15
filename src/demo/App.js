@@ -18,35 +18,31 @@ class App extends Component {
       {
         messages: [],
         user:
-        {
-          id: '1'
-        }
+          {
+            id: '1'
+          }
       }
   }
 
   componentDidMount() {
 
     this.directLine = new DirectLine({
-      secret: 'y3254-14TgQ.cwA.7aU.bB4PQHSE_wYBdKf6ddMqBdWQVCb0ZOOUeMFD3ywDshE'
+      secret: '<your-direct-line-key>'
     });
 
     this.directLine.activity$
       .filter(activity => activity.type === 'message')
       .subscribe(message => {
-
+        console.log(message);
         if (message.from.id != this.state.user.id) {
-          const model = new MessageModel({ from: message.from.id, id: message.id, text: message.text, sent: true })
+          const model = new MessageModel({ from: message.from.id, id: message.id, text: message.text, attachments: message.attachments, sent: true })
           // const model = new MessageModel({ from: '1', id: cuid(), sent: true, text: 'Hello!' }),
           this.setState({ messages: this.state.messages.concat([model]) });
         }
       });
   }
 
-  handleMessageEnter = (e) => {
-
-    const message = new MessageModel({ from: this.state.user.id, id: Date.now().toString(), text: e.value, sent: false });
-
-    this.setState({ messages: this.state.messages.concat([message]) });
+  postActivity(message) {
 
     // TODO: this doens't work because of a bug in chrome debugger
     const self = this;
@@ -54,8 +50,9 @@ class App extends Component {
     this.directLine.postActivity({
       from: { id: this.state.user.id, name: this.state.user.name },
       type: 'message',
-      text: e.value
-    }).subscribe(
+      text: message.text
+    })
+      .subscribe(
       id => {
 
         const index = self.state.messages.findIndex(m => m.id == message.id);
@@ -69,11 +66,29 @@ class App extends Component {
       });
   }
 
+  handleMessageEnter = (e) => {
+
+    const message = new MessageModel({ from: this.state.user.id, id: Date.now().toString(), text: e.value, sent: false });
+
+    this.setState({ messages: this.state.messages.concat([message]) });
+
+    this.postActivity(message);
+  }
+
+  handleQuickReplyClick = (e) => {
+
+    const message = new MessageModel({ from: this.state.user.id, id: cuid(), text: e.value, type: 'text', sent: true });
+
+    this.setState({ messages: this.state.messages.concat([message]) });
+
+    this.postActivity(message);
+  }
+
   render() {
 
     return (
       <div className="App">
-        <Widget messages={this.state.messages} user={this.state.user} onMessageEnter={this.handleMessageEnter} />
+        <Widget messages={this.state.messages} user={this.state.user} onMessageEnter={this.handleMessageEnter} onQuickReplyClick={this.handleQuickReplyClick} />
       </div>
     );
   }

@@ -7,6 +7,7 @@ import Trigger from './components/Trigger';
 import Widget from './components/Widget';
 import Window from './components/Window';
 import MessageModel from './model/MessageModel';
+import QuickReplies from './components/QuickReplies';
 
 export {
   Bubble,
@@ -17,5 +18,6 @@ export {
   Trigger,
   Widget,
   Window,
-  MessageModel
+  MessageModel,
+  QuickReplies
 }

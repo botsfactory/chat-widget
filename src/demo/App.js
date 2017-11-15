@@ -27,7 +27,7 @@ class App extends Component {
   componentDidMount() {
 
     this.directLine = new DirectLine({
-      secret: '<your-direct-line-key>'
+      secret: 'wD90LFoq4U4.cwA.qEU._aVTYUpSj51Vot0VBqNfdzba7KIyVCUToNZpFpCXZ7Q'
     });
 
     this.directLine.activity$

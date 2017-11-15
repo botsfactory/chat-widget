@@ -31,7 +31,7 @@ export default class QuickReplyButton extends Component {
   onClickQuickReplyButton = (e) => {
     this.props.onQuickReplyClick({ value: this.props.title });
   }
-  1
+  
   render() {
     return (
       <Wrapper onClick={this.onClickQuickReplyButton}>

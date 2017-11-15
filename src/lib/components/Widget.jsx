@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import Chat from './Chat'
 import Window from './Window'
 import Trigger from './Trigger'

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Bubble from './Bubble'
 import styled from 'styled-components'
+import QuickReplies from './QuickReplies'
 
 const Container = styled.div`
   background: #f1f1f1;
@@ -17,7 +18,7 @@ const ScrollWrapper = styled.div`
 
 export default class Conversation extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.scrollWrapperNode = null;
   }
@@ -30,7 +31,7 @@ export default class Conversation extends Component {
   componentDidUpdate() {
 
     this.scrollToBottom()
-  }  
+  }
 
   render() {
 
@@ -39,7 +40,33 @@ export default class Conversation extends Component {
         <ScrollWrapper innerRef={c => this.scrollWrapperNode = c}>
           {this.props.messages.map(message => {
 
-            return <Bubble key={message.id} who={message.from == this.props.user.id ? "me" : "other"} sent={message.sent} > {message.text}</Bubble>
+            let messageArr = [];
+
+            if (message.text) {
+              messageArr.push(
+                <Bubble key={message.id} who={message.from === this.props.user.id ? "me" : "other"} sent={message.sent} >
+                  {message.text}
+                </Bubble>
+              );
+            }
+
+            if (message.attachments && message.attachments.length > 0) {
+
+              for (let attachment of message.attachments) {
+
+                switch (attachment.contentType) {
+
+                  case 'application/vnd.microsoft.card.hero':
+                    messageArr.push(<QuickReplies key={message.id} message={attachment.content} onQuickReplyClick={this.props.onQuickReplyClick} />);
+                    break;
+
+                  default:
+                    break;
+                }
+              }
+            }
+
+            return messageArr;
           })}
         </ScrollWrapper>
       </Container>

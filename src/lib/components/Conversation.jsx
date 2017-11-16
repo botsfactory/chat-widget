@@ -60,6 +60,13 @@ export default class Conversation extends Component {
                     messageArr.push(<QuickReplies key={message.id} message={attachment.content} onQuickReplyClick={this.props.onQuickReplyClick} />);
                     break;
 
+                  case 'video/mp4':
+                    messageArr.push(
+                      <iframe width="300" height="215"
+                        src={attachment.contentUrl}>
+                      </iframe>)
+                    break;
+
                   default:
                     break;
                 }

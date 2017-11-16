@@ -59,11 +59,11 @@ export default class Header extends Component {
             <Container {...this.props}>
                 <Avatar>
                     <AvatarCircle className="avatar-circle">
-                        <img src={this.props.logo} alt= 'Chatbot Avatar' style={{ maxHeight: '80%' }} />
+                        <img src={this.props.logo} style={{ maxHeight: '80%' }} />
                     </AvatarCircle>
                 </Avatar>
                 <Description>
-                    <Title>Welcome to Botsfactory</Title>
+                    <Title>{this.props.headerTitle}</Title>
                 </Description>
                 <Controls>
                     <Close className={`fa-stack fa-2x`} onClick={this.props.onCloseClick} >

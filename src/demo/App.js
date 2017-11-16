@@ -88,7 +88,13 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Widget messages={this.state.messages} user={this.state.user} onMessageEnter={this.handleMessageEnter} onQuickReplyClick={this.handleQuickReplyClick} />
+        <Widget 
+          messages={this.state.messages} 
+          user={this.state.user} 
+          onMessageEnter={this.handleMessageEnter} 
+          onQuickReplyClick={this.handleQuickReplyClick} 
+          headerTitle='Welcome to Botsfactory' 
+        />
       </div>
     );
   }

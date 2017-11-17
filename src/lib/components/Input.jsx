@@ -69,7 +69,7 @@ export default class Input extends Component {
 
   render() {
     return (
-      <Container {...this.props}>
+      <Container {...this.props}  className="widget-input-container">
 
         <TextField innerRef={comp => this.input = comp} type="text" placeholder="Type your message..." value={this.state.value} onChange={this.onChange} onKeyDown={this.onKeyDown} />
         <Send className={`send`} onClick={this.onSendClick} enabled={this.state.value !== ''}>

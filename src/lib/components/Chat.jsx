@@ -30,8 +30,8 @@ export default class Chat extends Component {
 
     return (
       <Container>
-        <StyledHeader className="header-color" onCloseClick={this.props.onCloseClick} />
-        <StyledConversation messages={this.props.messages} user={this.props.user} />
+        <StyledHeader className="header-color" onCloseClick={this.props.onCloseClick} headerTitle={this.props.headerTitle}/>
+        <StyledConversation messages={this.props.messages} user={this.props.user} onQuickReplyClick={this.props.onQuickReplyClick}/>
         <StyledInput onMessageEnter={this.props.onMessageEnter} />
       </Container>
     )

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import logo from '../img/avatar.png'
 
 const Container = styled.div`
   display: flex;
@@ -65,7 +63,7 @@ export default class Header extends Component {
                     </AvatarCircle>
                 </Avatar>
                 <Description>
-                    <Title>Welcome to Botsfactory</Title>
+                    <Title>{this.props.headerTitle}</Title>
                 </Description>
                 <Controls>
                     <Close className={`fa-stack fa-2x`} onClick={this.props.onCloseClick} >

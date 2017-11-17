@@ -4,11 +4,11 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
     display: flex;
-    ${props => props.who == 'me' && `
+    ${props => props.who === 'me' && `
         flex-direction: row-reverse;
     `}
 
-    ${props => props.who == 'other' && `
+    ${props => props.who === 'other' && `
         flex-direction: row;
     `}
 `
@@ -22,12 +22,12 @@ const Text = styled.div`
     line-height: 1.4;
     opacity: ${props => props.sent ? 1 : .7};
     
-    ${props => props.who == 'me' && `
+    ${props => props.who === 'me' && `
         background: #0084ff;
         color: #fff;
     `}
 
-    ${props => props.who == 'other' && `
+    ${props => props.who === 'other' && `
         background: #D8D8D8;
         color: #2B2B2B;
     `}

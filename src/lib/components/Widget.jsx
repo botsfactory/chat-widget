@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import Chat from './Chat'
 import Window from './Window'
 import Trigger from './Trigger'
@@ -28,7 +27,7 @@ export default class Widget extends Component {
       <div className="widget">
 
         <Window visible={this.state.windowVisible}>
-          <Chat {...this.props} onCloseClick={this.onCloseClick}/>
+          <Chat {...this.props} onCloseClick={this.onCloseClick} headerTitle={this.props.headerTitle}/>
         </Window>
 
         <Trigger onClick={this.onTriggerClick} visible={!this.state.windowVisible}/>

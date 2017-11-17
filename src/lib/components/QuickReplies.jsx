@@ -46,7 +46,7 @@ export default class QuickReplies extends Component {
         return (
             <div>
                 <Wrapper>
-                    <Text>{this.props.message.text}</Text>
+                    <Text>{this.props.message.title}</Text>
                 </Wrapper>
                 <Container className="quickreplies" >
                     <Buttons>

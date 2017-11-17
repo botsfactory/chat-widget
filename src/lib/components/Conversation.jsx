@@ -42,7 +42,7 @@ export default class Conversation extends Component {
 
             let messageArr = [];
 
-            if (message.text) {
+            if (message.text && message.text !== "") {
               messageArr.push(
                 <Bubble key={message.id} who={message.from === this.props.user.id ? "me" : "other"} sent={message.sent} >
                   {message.text}

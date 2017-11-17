@@ -18,9 +18,9 @@ class App extends Component {
       {
         messages: [],
         user:
-          {
-            id: '1'
-          }
+        {
+          id: '1'
+        }
       }
   }
 
@@ -88,12 +88,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Widget 
-          messages={this.state.messages} 
-          user={this.state.user} 
-          onMessageEnter={this.handleMessageEnter} 
-          onQuickReplyClick={this.handleQuickReplyClick} 
-          headerTitle='Welcome to Botsfactory' 
+        <Widget
+          messages={this.state.messages}
+          user={this.state.user}
+          onMessageEnter={this.handleMessageEnter}
+          onQuickReplyClick={this.handleQuickReplyClick}
+          headerTitle='Welcome to Botsfactory'
         />
       </div>
     );

@@ -1,6 +1,6 @@
 {
   "name": "@botsfactory/chat-widget",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "React NPM library starter kit based on Facebook's create react app",
   "main": "build/index.js",
   "scripts": {

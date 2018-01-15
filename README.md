@@ -1,29 +1,13 @@
-# React NPM library starter kit
+# BotsFactory Chat Widget
 
-[![Build Status](https://travis-ci.org/UdiliaInc/create-react-library.svg?branch=master)](https://travis-ci.org/UdiliaInc/create-react-library)
-[![Dependencies](https://img.shields.io/david/udiliaInc/create-react-library.svg)]()
-[![Dev Dependencies](https://img.shields.io/david/dev/udiliaInc/create-react-library.svg)]()
-
-based on Facebook's <a href="https://github.com/facebookincubator/create-react-app" target="_blank">Create react app</a>
-
-## Converted to custom setup
-
-Moved all dependencies to dev dependencies because we don't need extra dependencies for our library after build, but we want all this features while developing one: 
-
-* Compile SCSS to css
-* React, JSX, ES6, and Flow syntax support.
-* Language extras beyond ES6 like the object spread operator.
-* A dev server that lints for common errors.
-* Import CSS and image files directly from JavaScript.
-* Autoprefixed CSS, so you don’t need `-webkit` or other prefixes.
-* A `build` script to bundle JS, CSS, and images for production.
+This a sample chat widget that we use internally for our prohects.
 
 ## Getting Started
 
 Clone repo
 
 ````
-git clone https://github.com/udiliaInc/create-react-library.git
+git clone git@github.com:botsfactory/chat-widget.git
 ````
 
 Install dependencies
@@ -59,6 +43,4 @@ Produces production version of library under the `build` folder.
 
 `npm publish`
 
-## Example library built with this starter kit
-
-https://github.com/UdiliaInc/react-under-construction
+*Based on the React NPM library starter kit*

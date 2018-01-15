@@ -36,7 +36,6 @@ class App extends Component {
 
         if (message.from.id !== this.state.user.id) {
           const model = new MessageModel({ from: message.from.id, id: message.id, text: message.text, attachments: message.attachments, sent: true })
-          // const model = new MessageModel({ from: '1', id: cuid(), sent: true, text: 'Hello!' }),
           this.setState({ messages: this.state.messages.concat([model]) });
         }
       });
@@ -44,7 +43,7 @@ class App extends Component {
 
   postActivity(message) {
 
-    // TODO: this doens't work because of a bug in chrome debugger
+    // TODO: this doesn't work because of a bug in chrome debugger
     const self = this;
 
     this.directLine.postActivity({
